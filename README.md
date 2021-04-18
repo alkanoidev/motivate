@@ -14,3 +14,9 @@
 ### Link of API:
 
 - [Free API - Inspirational quotes JSON](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
+
+[the best text-based syntax][mkdnlink] 
+
+
+[mkdnlink]: https://github.com/alkanoidev/motivate/blob/main/LICENSE.md
+
