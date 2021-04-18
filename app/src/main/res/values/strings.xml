@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">motivate</string>
+    <string name="btn">next</string>
+    <string name="textview">Me</string>
+    <string name="never_give_up">Never give up!</string>
+
+    <array name="img">
+        <item>@drawable/img1</item>
+        <item>@drawable/img2</item>
+        <item>@drawable/img3</item>
+        <item>@drawable/img4</item>
+        <item>@drawable/img5</item>
+        <item>@drawable/img6</item>
+        <item>@drawable/img7</item>
+    </array>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="todo">TODO</string>
+    <string name="no_internet_connection">No Internet Connection!</string>
+    <string name="creator_alkanoidev">creator: @alkanoidev</string>
+    <string name="presetquote">\'\'It\'s rubbish but its my rubbish.\'\'</string>
+    <string name="presetauthor">alkanoidev</string>
+</resources>
