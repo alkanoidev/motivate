@@ -30,9 +30,9 @@ implementation 'com.google.code.gson:gson:2.8.6'
 - [Free API - Inspirational quotes JSON](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 
 ## Contact:
-### Email: alkanoidev@gmail.com
+### Email: alkanoidev@gmail.com 
 
-## License:
+# License:
 ```
 MIT License
 
