@@ -24,7 +24,7 @@
 - [Free API - Inspirational quotes JSON](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 
 ## Contact:
-### Email: alkanoidev@gmail.com 
+- ### Email: alkanoidev@gmail.com 
 
 # License:
 ```
