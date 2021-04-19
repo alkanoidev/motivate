@@ -23,7 +23,7 @@
             <Button
                 android:id="@+id/next_btn"
                 style="@style/Theme.Motivate.button"
-                android:drawableEnd="@drawable/iconbtn"
+                android:drawableEnd="@drawable/button_icon"
                 android:background="@drawable/next_btn_bg"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
