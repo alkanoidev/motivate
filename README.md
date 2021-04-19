@@ -5,10 +5,10 @@
 - #### The **idea** is to press on a button and randomly select one quote with the author from API to print on the screen.
 - This application was made as a practice.
 ## Screenshots:
-![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Main_Activity1.png)
-![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Main_Activity.png)
-![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/No_Internet_Connection.png)
-![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Splash_Screen.png)
+![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%204.png)
+![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2041.png)
+![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2042.png)
+![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2043.png)
 
 ## Running the project:
 ### To run this application simply clone the repository and open it in Android Studio. Then follow [this](https://developer.android.com/training/basics/firstapp/running-app) tutorial.
