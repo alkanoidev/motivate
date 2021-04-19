@@ -22,7 +22,9 @@
 implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 ```
 - For JSON parsing: [gson](https://github.com/google/gson)  
-```implementation 'com.google.code.gson:gson:2.8.6'```
+```
+implementation 'com.google.code.gson:gson:2.8.6'
+```
 
 ## Link of API:
 - [Free API - Inspirational quotes JSON](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
