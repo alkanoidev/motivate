@@ -11,7 +11,7 @@
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Splash_Screen.png)
 
 ## Running the project:
-- To run this application simply clone the repository and open it in Android Studio. Then follow [this](https://developer.android.com/training/basics/firstapp/running-app) tutorial.
+### To run this application simply clone the repository and open it in Android Studio. Then follow [this](https://developer.android.com/training/basics/firstapp/running-app) tutorial.
 - minimum SDK version: **21**
 - kotlin version: **1.3.72**
 - gradle version: **4.1.3**
