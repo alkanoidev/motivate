@@ -21,7 +21,7 @@
 ```
 implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 ```
-- For JSON parsing: [GSON](https://github.com/google/gson)  
+- For JSON parsing: [gson](https://github.com/google/gson)  
 ```implementation 'com.google.code.gson:gson:2.8.6'```
 
 ## Link of API:
