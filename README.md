@@ -4,6 +4,11 @@
 ### Motivate is an example app for reading JSON files using GSON.  
 - #### The **idea** is to press on a button and randomly select one quote with the author from API to print on the screen.
 - This application was made as a practice.
+## Features:
+- JSON parsing from URL.
+- Splash Screen.
+- Loading images from URL.
+- Checking Internet Connection.
 ## Screenshots:
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%204.png)
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2041.png)
