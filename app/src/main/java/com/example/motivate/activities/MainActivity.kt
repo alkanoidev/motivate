@@ -1,13 +1,17 @@
 package com.example.motivate.activities
 
 import android.annotation.SuppressLint
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.motivate.Model
 import com.example.motivate.R
+import com.example.motivate.activities.SplashScreen.Companion.context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
@@ -20,8 +24,12 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
     private lateinit var quoteView: TextView
     private lateinit var authorView: TextView
+    private lateinit var imageView: ImageView
 
     private var thread = Thread()
+
+    private val quotesApiURL:String = "https://type.fit/api/quotes"
+    private var randomImageURL:String = "https://source.unsplash.com/collection/220381/"
 
     private lateinit var list:MutableList<Model>
     private lateinit var instance: Model
@@ -33,34 +41,33 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*val background: RelativeLayout = findViewById(R.id.background)
-        val res = resources
-        val myImages = res.obtainTypedArray(R.array.img)
-        val drawableID = myImages.getResourceId(Random.nextInt(0,myImages.length()),-1)
-        background.setBackgroundResource(drawableID)*/
+        randomImageURL=randomImageURL.plus(getScreenWidth()).plus("x").plus(getScreenHeight())
+        Log.d(TAG,randomImageURL)
 
-        quoteView=findViewById(R.id.quote)
-        authorView=findViewById(R.id.author)
+        imageView = findViewById(R.id.imageView)
+        Glide.with(context).load(randomImageURL).into(imageView);
+
+        quoteView = findViewById(R.id.quote)
+        authorView = findViewById(R.id.author)
 
         thread = Thread(Runnable {
             val url:URL? = try {
-                URL("https://type.fit/api/quotes")
+                URL(quotesApiURL)
             }catch (e: MalformedURLException){
                 Log.d("Exception", e.toString())
                 null
             }
-            url?.getString()?.apply {
+                url?.getString()?.apply {
                 list = parseJson(this@apply)
-
             }
             runOnUiThread {
-                quoteView.text = getString(R.string.presetquote)
-                authorView.text = getString(R.string.presetauthor)
+
             }
         })
         thread.start()
 
     }
+
     private fun URL.getString(): String? {
         val stream = openStream()
         return try {
@@ -85,6 +92,7 @@ class MainActivity : AppCompatActivity() {
         }
         return list
     }
+
     inline fun <reified T> Gson.fromJson(json: String) = fromJson<T>(json, object : TypeToken<T>() {}.type)
 
     fun update(view: View) {
@@ -92,12 +100,20 @@ class MainActivity : AppCompatActivity() {
         authorView=findViewById(R.id.author)
 
         instance = list[Random.nextInt(0, list.size - 1)]
-        instance.quote = "''" + instance.quote + "''"
+        instance.quote = "\"" + instance.quote + "\""
         quoteView.text =  instance.quote
         authorView.text = instance.author
 
-        Log.d(TAG,"$instance.quote")
-        Log.d(TAG,"$instance.author")
+//        Log.d(TAG,"$instance.quote")
+//        Log.d(TAG,"$instance.author")
+    }
+
+    private fun getScreenWidth(): String {
+        return Resources.getSystem().displayMetrics.widthPixels.toString()
+    }
+
+    private fun getScreenHeight(): String {
+        return Resources.getSystem().displayMetrics.heightPixels.toString()
     }
 }
 

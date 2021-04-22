@@ -42,6 +42,12 @@
                 android:textColor="@color/black"
                 android:textSize="32sp" />
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="TODO" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -66,6 +72,7 @@
                             android:id="@+id/quote"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="@string/presetquote"
                             android:gravity="center"
                             android:textColor="@color/white"
                             android:textSize="32sp"
@@ -76,6 +83,7 @@
 
                         <TextView
                             android:id="@+id/author"
+                            android:text="@string/presetauthor"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
@@ -107,6 +115,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="RtlHardcoded,SmallSp" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </RelativeLayout>
