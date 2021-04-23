@@ -30,7 +30,7 @@ To run this application simply clone the repository and open it in Android Studi
 - [Free API - Inspirational quotes JSON](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 
 ## Contact:
-- ### Email: alkanoidev@gmail.com 
+- Email: alkanoidev@gmail.com 
 
 # License:
 ```
