@@ -1,5 +1,5 @@
 # Motivate
-![failed to load](https://github.com/alkanoidev/motivate/blob/main/logo/Logo.png)
+![failed to load](https://github.com/alkanoidev/motivate/blob/main/logo/logo.svg)
 ## Overview:
 <font size="3">Motivate is an example app for reading JSON files using GSON.  </font>
 - **The **idea** is to press on a button and randomly select one quote with the author from API to print on the screen.**
