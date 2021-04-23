@@ -2,7 +2,7 @@
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/logo/Logo.png)
 ## Overview:
 ### Motivate is an example app for reading JSON files using GSON.  
-- #### The **idea** is to press on a button and randomly select one quote with the author from API to print on the screen.
+- **The **idea** is to press on a button and randomly select one quote with the author from API to print on the screen.**
 - This application was made as a practice.
 ## Features:
 - JSON parsing from URL.
@@ -16,7 +16,7 @@
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2043.png)
 
 ## Running the project:
-### To run this application simply clone the repository and open it in Android Studio. Then follow [this](https://developer.android.com/training/basics/firstapp/running-app) tutorial.
+To run this application simply clone the repository and open it in Android Studio. Then follow [this](https://developer.android.com/training/basics/firstapp/running-app) tutorial.
 - minimum SDK version: **21**
 - kotlin version: **1.3.72**
 - gradle version: **4.1.3**
