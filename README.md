@@ -1,9 +1,14 @@
 # Motivate
-![failed to load](https://github.com/alkanoidev/motivate/blob/main/logo/Logo.png)
+![failed to load](https://github.com/alkanoidev/motivate/blob/main/logo/logo.svg)
 ## Overview:
-### Motivate is an example app for reading JSON files using GSON.  
-- #### The **idea** is to press on a button and randomly select one quote with the author from API to print on the screen.
+<font size="3">Motivate is an example app for reading JSON files using GSON.  </font>
+- **The **idea** is to press on a button and randomly select one quote with the author from API to print on the screen.**
 - This application was made as a practice.
+## Features:
+- JSON parsing from URL.
+- Splash Screen.
+- Loading images from URL.
+- Checking Internet Connection.
 ## Screenshots:
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%204.png)
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2041.png)
@@ -11,20 +16,21 @@
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2043.png)
 
 ## Running the project:
-### To run this application simply clone the repository and open it in Android Studio. Then follow [this](https://developer.android.com/training/basics/firstapp/running-app) tutorial.
+To run this application simply clone the repository and open it in **Android Studio**. Then follow [this](https://developer.android.com/training/basics/firstapp/running-app) tutorial.
 - minimum SDK version: **21**
 - kotlin version: **1.3.72**
 - gradle version: **4.1.3**
 
-## Dependencies:
+## Dependencies (gradle):
 - For URL handling: [okhttp](https://github.com/square/okhttp)  ```implementation 'com.squareup.okhttp3:okhttp:3.10.0'```
 - For JSON parsing: [gson](https://github.com/google/gson)  ```implementation 'com.google.code.gson:gson:2.8.6'```
+- For reading images from URL: [glide](https://github.com/bumptech/glide)  ```implementation 'com.github.bumptech.glide:glide:4.10.0'```
 
 ## Link of API:
 - [Free API - Inspirational quotes JSON](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 
 ## Contact:
-- ### Email: alkanoidev@gmail.com 
+- Email: alkanoidev@gmail.com 
 
 # License:
 ```
