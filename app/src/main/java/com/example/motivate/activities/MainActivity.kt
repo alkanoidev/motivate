@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 null
             }
                 url?.getString()?.apply {
-                list = parseJson(this@apply)
+                list = parseJsonData(this@apply)
             }
             runOnUiThread {
 
@@ -88,13 +88,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun parseJson(data:String): MutableList<Model> {
+    private fun parseJsonData(data:String): MutableList<Model> {
         val list:MutableList<Model> = Gson().fromJson<MutableList<Model>>(data)
         list.forEach{
             if(it.author==null){
                 it.author="Unknown"
             }
         }
+        return list
+    }
+
+    private fun parseJsonImage(data:String): MutableList<Model> {
+        val list:MutableList<Model> = Gson().fromJson<MutableList<Model>>(data)
         return list
     }
 
