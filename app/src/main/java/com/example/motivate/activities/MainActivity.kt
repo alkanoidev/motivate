@@ -29,7 +29,12 @@ class MainActivity : AppCompatActivity() {
     private var thread = Thread()
 
     private val quotesApiURL:String = "https://type.fit/api/quotes"
-    private var randomImageURL:String = "https://source.unsplash.com/collection/220381/"
+    //private var randomImageURL:String = "https://source.unsplash.com/collection/220381/"
+    private var randomImageURL:String = "https://picsum.photos/v2/list"
+    //get from json from this url to list
+    //select by random
+    //add blur
+
 
     private lateinit var list:MutableList<Model>
     private lateinit var instance: Model
@@ -68,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun URL.getString(): String? {
+    private fun URL.getString(): String {
         val stream = openStream()
         return try {
             val r = BufferedReader(InputStreamReader(stream))
@@ -116,4 +121,3 @@ class MainActivity : AppCompatActivity() {
         return Resources.getSystem().displayMetrics.heightPixels.toString()
     }
 }
-

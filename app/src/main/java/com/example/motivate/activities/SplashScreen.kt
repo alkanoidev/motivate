@@ -1,5 +1,6 @@
 package com.example.motivate.activities
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -17,9 +18,10 @@ import com.example.motivate.R
         context = applicationContext
         val networkState:Boolean = getState(context)
         if (networkState){
-            startActivity(Intent(this@SplashScreen, MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }else{
-            startActivity(Intent(this@SplashScreen, NoInternetConnection::class.java))
+            startActivity(Intent(this, NoInternetConnection::class.java))
             finish()
         }
 
@@ -52,6 +54,7 @@ import com.example.motivate.R
         return false
     }
     companion object {
+        @SuppressLint("StaticFieldLeak")
         lateinit  var context: Context
     }
 }
