@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
+    android:id="@+id/imageView"
     tools:context=".activities.MainActivity">
 
     <FrameLayout
@@ -40,12 +41,6 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="32sp" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="TODO" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

@@ -8,10 +8,9 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.example.motivate.Model
+import com.example.motivate.ImagesModel
+import com.example.motivate.QuotesModel
 import com.example.motivate.R
-import com.example.motivate.activities.SplashScreen.Companion.context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
@@ -30,14 +29,16 @@ class MainActivity : AppCompatActivity() {
 
     private val quotesApiURL:String = "https://type.fit/api/quotes"
     //private var randomImageURL:String = "https://source.unsplash.com/collection/220381/"
-    private var randomImageURL:String = "https://picsum.photos/v2/list"
+    private var imagesURL:String = "https://picsum.photos/v2/list"
     //get from json from this url to list
     //select by random
     //add blur
+    //APPLICATION MAY BE DOING TOO MUCH WORK ON ITS MAIN THREAD
 
-
-    private lateinit var list:MutableList<Model>
-    private lateinit var instance: Model
+    private lateinit var quoteList:MutableList<QuotesModel>
+    private lateinit var imageList:MutableList<ImagesModel>
+    private lateinit var instanceQuotes: QuotesModel
+    private lateinit var instanceImages: ImagesModel
 
     private val TAG: String = MainActivity::class.java.simpleName
 
@@ -46,11 +47,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        randomImageURL=randomImageURL.plus(getScreenWidth()).plus("x").plus(getScreenHeight())
+        /*randomImageURL=randomImageURL.plus(getScreenWidth()).plus("x").plus(getScreenHeight())
         Log.d(TAG,randomImageURL)
 
         imageView = findViewById(R.id.imageView)
-        Glide.with(context).load(randomImageURL).into(imageView);
+        Glide.with(context).load(randomImageURL).into(imageView);*/
 
         quoteView = findViewById(R.id.quote)
         authorView = findViewById(R.id.author)
@@ -62,11 +63,22 @@ class MainActivity : AppCompatActivity() {
                 Log.d("Exception", e.toString())
                 null
             }
-                url?.getString()?.apply {
-                list = parseJsonData(this@apply)
+            url?.getString()?.apply {
+                quoteList = parseJsonData(this@apply)
             }
-            runOnUiThread {
+            val url1: URL? = try {
+                URL(imagesURL)
+            }catch (e: MalformedURLException){
+                Log.d("Exception", e.toString())
+                null
+            }
+            url1?.getString()?.apply {
+                imageList = parseJsonImage(this@apply)
+            }
 
+            runOnUiThread {
+                instanceImages = imageList[Random.nextInt(0, imageList.size - 1)]
+                println(instanceImages)
             }
         })
         thread.start()
@@ -88,8 +100,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun parseJsonData(data:String): MutableList<Model> {
-        val list:MutableList<Model> = Gson().fromJson<MutableList<Model>>(data)
+    private fun parseJsonData(data:String): MutableList<QuotesModel> {
+        val list:MutableList<QuotesModel> = Gson().fromJson<MutableList<QuotesModel>>(data)
         list.forEach{
             if(it.author==null){
                 it.author="Unknown"
@@ -98,8 +110,8 @@ class MainActivity : AppCompatActivity() {
         return list
     }
 
-    private fun parseJsonImage(data:String): MutableList<Model> {
-        val list:MutableList<Model> = Gson().fromJson<MutableList<Model>>(data)
+    private fun parseJsonImage(data:String): MutableList<ImagesModel> {
+        val list:MutableList<ImagesModel> = Gson().fromJson<MutableList<ImagesModel>>(data)
         return list
     }
 
@@ -109,10 +121,10 @@ class MainActivity : AppCompatActivity() {
         quoteView=findViewById(R.id.quote)
         authorView=findViewById(R.id.author)
 
-        instance = list[Random.nextInt(0, list.size - 1)]
-        instance.quote = "\"" + instance.quote + "\""
-        quoteView.text =  instance.quote
-        authorView.text = instance.author
+        instanceQuotes = quoteList[Random.nextInt(0, quoteList.size - 1)]
+        instanceQuotes.quote = "\"" + instanceQuotes.quote + "\""
+        quoteView.text =  instanceQuotes.quote
+        authorView.text = instanceQuotes.author
 
 //        Log.d(TAG,"$instance.quote")
 //        Log.d(TAG,"$instance.author")
