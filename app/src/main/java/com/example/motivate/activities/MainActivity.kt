@@ -8,9 +8,11 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.motivate.ImagesModel
 import com.example.motivate.QuotesModel
 import com.example.motivate.R
+import com.example.motivate.activities.SplashScreen.Companion.context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
@@ -28,11 +30,7 @@ class MainActivity : AppCompatActivity() {
     private var thread = Thread()
 
     private val quotesApiURL:String = "https://type.fit/api/quotes"
-    //private var randomImageURL:String = "https://source.unsplash.com/collection/220381/"
     private var imagesURL:String = "https://picsum.photos/v2/list"
-    //get from json from this url to list
-    //select by random
-    //add blur
     //APPLICATION MAY BE DOING TOO MUCH WORK ON ITS MAIN THREAD
 
     private lateinit var quoteList:MutableList<QuotesModel>
@@ -47,14 +45,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*randomImageURL=randomImageURL.plus(getScreenWidth()).plus("x").plus(getScreenHeight())
-        Log.d(TAG,randomImageURL)
-
-        imageView = findViewById(R.id.imageView)
-        Glide.with(context).load(randomImageURL).into(imageView);*/
-
         quoteView = findViewById(R.id.quote)
         authorView = findViewById(R.id.author)
+        imageView = findViewById(R.id.imageView)
 
         thread = Thread(Runnable {
             val url:URL? = try {
@@ -78,7 +71,9 @@ class MainActivity : AppCompatActivity() {
 
             runOnUiThread {
                 instanceImages = imageList[Random.nextInt(0, imageList.size - 1)]
-                println(instanceImages)
+                instanceImages.download_url = "https://picsum.photos/id/${instanceImages.id}/${getScreenWidth()}/${getScreenHeight()}/?blur=5"
+                Glide.with(context).load(instanceImages.download_url).into(imageView)
+
             }
         })
         thread.start()
@@ -115,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         return list
     }
 
-    inline fun <reified T> Gson.fromJson(json: String) = fromJson<T>(json, object : TypeToken<T>() {}.type)
+    private inline fun <reified T> Gson.fromJson(json: String) = fromJson<T>(json, object : TypeToken<T>() {}.type)
 
     fun update(view: View) {
         quoteView=findViewById(R.id.quote)
@@ -125,9 +120,6 @@ class MainActivity : AppCompatActivity() {
         instanceQuotes.quote = "\"" + instanceQuotes.quote + "\""
         quoteView.text =  instanceQuotes.quote
         authorView.text = instanceQuotes.author
-
-//        Log.d(TAG,"$instance.quote")
-//        Log.d(TAG,"$instance.author")
     }
 
     private fun getScreenWidth(): String {

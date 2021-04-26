@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    android:id="@+id/imageView"
     tools:context=".activities.MainActivity">
 
     <FrameLayout
@@ -20,27 +19,11 @@
             android:layout_height="match_parent"
             tools:ignore="UselessParent">
 
-            <Button
-                android:id="@+id/next_btn"
-                style="@style/Theme.Motivate.button"
-                android:drawableEnd="@drawable/button_icon"
-                android:background="@drawable/next_btn_bg"
-                android:layout_width="wrap_content"
-                android:layout_height="55dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="641dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="35dp"
-                android:onClick="update"
-                android:text="@string/btn"
-                android:gravity="center"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="32sp" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="TODO" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -109,6 +92,26 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="RtlHardcoded,SmallSp" />
+
+                <Button
+                    android:id="@+id/next_btn"
+                    style="@style/Theme.Motivate.button"
+                    android:layout_width="378dp"
+                    android:layout_height="108dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/next_btn_bg"
+                    android:drawableEnd="@drawable/button_icon"
+                    android:gravity="center"
+                    android:onClick="update"
+                    android:text="@string/btn"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="32sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.484"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="RtlHardcoded" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
