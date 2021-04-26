@@ -1,4 +1,4 @@
-package com.example.motivate
+package com.example.motivate.models
 
 import com.google.gson.annotations.SerializedName
 
