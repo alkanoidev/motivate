@@ -45,34 +45,6 @@ class MainActivity : AppCompatActivity() {
         authorView = findViewById(R.id.author)
         imageView = findViewById(R.id.imageView)
 
-        /*thread = Thread(Runnable {
-            val url:URL? = try {
-                URL(quotesApiURL)
-            }catch (e: MalformedURLException){
-                Log.d("Exception", e.toString())
-                null
-            }
-            url?.getString()?.apply {
-                quoteList = tools.parseJsonData(this@apply)
-            }
-            val url1: URL? = try {
-                URL(imagesURL)
-            }catch (e: MalformedURLException){
-                Log.d("Exception", e.toString())
-                null
-            }
-            url1?.getString()?.apply {
-                imageList = tools.parseJsonImage(this@apply)
-            }
-
-            runOnUiThread {
-                instanceImages = imageList[Random.nextInt(0, imageList.size - 1)]
-                instanceImages.download_url = "https://picsum.photos/id/${instanceImages.id}/${tools.getScreenWidth()}/${tools.getScreenHeight()}/?blur=5"
-                Glide.with(context).load(instanceImages.download_url).into(imageView)
-
-            }
-        })
-        thread.start()*/
 
         GlobalScope.launch(Dispatchers.IO) {
             process()
