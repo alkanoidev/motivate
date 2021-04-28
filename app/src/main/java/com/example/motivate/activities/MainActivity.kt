@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
 
 
-        GlobalScope.launch(Dispatchers.IO) {
+        GlobalScope.launch(Default) {
             process()
             setImage()
         }
