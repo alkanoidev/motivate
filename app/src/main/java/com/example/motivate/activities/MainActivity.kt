@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun setImage() = withContext(Main){
-        instanceImages = imageList[Random.nextInt(0, imageList.size - 1)] //not initialized
+        instanceImages = imageList[Random.nextInt(0, imageList.size - 1)]
         instanceImages.download_url = "https://picsum.photos/id/" +
                                       "${instanceImages.id}/${tools.getScreenWidth()}/" +
                                       "${tools.getScreenHeight()}/?blur=5"
