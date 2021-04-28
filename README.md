@@ -11,8 +11,8 @@
 - Checking Internet Connection
 - Coroutines
 ## Screenshots:
-![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%204.png)
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2041.png)
+![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%204.png)
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2042.png)
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2043.png)
 
