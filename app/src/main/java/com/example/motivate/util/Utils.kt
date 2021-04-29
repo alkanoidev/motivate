@@ -20,11 +20,11 @@ class Utils {
     private var imagesURL: String = "https://picsum.photos/v2/list"
 
     suspend fun getQuotes(): MutableList<QuotesModel> = coroutineScope {
-        val url1: URL = async(Dispatchers.IO) {
+        val url: URL = async(Dispatchers.IO) {
             URL(quotesApiURL)
         }.await()
 
-        url1.getString().apply {
+        url.getString().apply {
             quoteList = async(Dispatchers.Default) { parseJsonData(this@apply) }.await()
         }
         return@coroutineScope quoteList

@@ -100,7 +100,7 @@
                     android:layout_height="108dp"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/next_btn_bg"
-                    android:drawableEnd="@drawable/button_icon"
+                    android:drawableEnd="@drawable/ic_baseline_double_arrow_24"
                     android:gravity="center"
                     android:onClick="update"
                     android:text="@string/btn"
