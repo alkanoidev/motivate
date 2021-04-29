@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        //add on click on background image change bg image
         quoteView = findViewById(R.id.quote)
         authorView = findViewById(R.id.author)
         imageView = findViewById(R.id.imageView)
@@ -74,6 +74,14 @@ class MainActivity : AppCompatActivity() {
         instanceQuotes.quote = "\"" + instanceQuotes.quote + "\""
         quoteView.text =  instanceQuotes.quote
         authorView.text = instanceQuotes.author
+    }
+
+    fun changeBackground(view: View) {
+        instanceImages = imageList[Random.nextInt(0, imageList.size - 1)]
+        instanceImages.download_url = "https://picsum.photos/id/" +
+                "${instanceImages.id}/${tools.getScreenWidth()}/" +
+                "${tools.getScreenHeight()}/?blur=5"
+        Glide.with(context).load(instanceImages.download_url).into(imageView)
     }
 
 }

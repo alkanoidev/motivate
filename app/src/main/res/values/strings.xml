@@ -10,4 +10,5 @@
     <string name="creator_alkanoidev">creator: @alkanoidev</string>
     <string name="presetquote">\'\'It\'s rubbish but its my rubbish.\'\'</string>
     <string name="presetauthor">alkanoidev</string>
+    <string name="arrow_keyboard_right"><![CDATA[>]]></string>
 </resources>

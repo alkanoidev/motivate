@@ -17,7 +17,7 @@ class Utils {
     private lateinit var imageList: MutableList<ImagesModel>
 
     private val quotesApiURL: String = "https://type.fit/api/quotes"
-    private var imagesURL: String = "https://picsum.photos/v2/list"
+    private var imagesURL: String = "https://picsum.photos/v2/list?page=2&limit=100"
 
     suspend fun getQuotes(): MutableList<QuotesModel> = coroutineScope {
         val url: URL = async(Dispatchers.IO) {
