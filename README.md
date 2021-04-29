@@ -16,6 +16,9 @@
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2042.png)
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2043.png)
 
+## Prototype:
+![failed to load](https://github.com/alkanoidev/motivate/blob/main/prototype/figma_prototype.svg)
+
 ## Running the project:
 To run this application simply clone the repository and open it in **Android Studio**. Then follow [this](https://developer.android.com/training/basics/firstapp/running-app) tutorial.
 - minimum SDK version: **21**
