@@ -3,6 +3,7 @@ package com.example.motivate.activities
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,21 +13,17 @@ import com.example.motivate.activities.SplashScreen.Companion.context
 import com.example.motivate.models.ImagesModel
 import com.example.motivate.models.QuotesModel
 import com.example.motivate.util.Utils
+import com.google.android.material.transition.platform.MaterialSharedAxis
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.Default
 import kotlinx.coroutines.Dispatchers.Main
 import kotlin.random.Random
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var quoteView: TextView
     private lateinit var authorView: TextView
     private lateinit var imageView: ImageView
-
-    private var thread = Thread()
-
-    private val quotesApiURL:String = "https://type.fit/api/quotes"
-    private var imagesURL:String = "https://picsum.photos/v2/list"
-    //APPLICATION MAY BE DOING TOO MUCH WORK ON ITS MAIN THREAD
 
     private lateinit var quoteList:MutableList<QuotesModel>
     private lateinit var imageList:MutableList<ImagesModel>
@@ -34,23 +31,27 @@ class MainActivity : AppCompatActivity() {
     private lateinit var instanceImages: ImagesModel
     private var tools: Utils = Utils()
 
-    private val TAG: String = MainActivity::class.java.simpleName
-
     @SuppressLint("Recycle")
     override fun onCreate(savedInstanceState: Bundle?) {
+        val enter = MaterialSharedAxis(MaterialSharedAxis.X, true).apply {
+            addTarget(R.id.author)
+            addTarget(R.id.quote)
+            addTarget(R.id.next_btn)
+        }
+        window.enterTransition = enter
+        window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //add on click on background image change bg image
+
         quoteView = findViewById(R.id.quote)
         authorView = findViewById(R.id.author)
         imageView = findViewById(R.id.imageView)
-
 
         GlobalScope.launch(Default) {
             process()
             setImage()
         }
-
 
     }
     private suspend fun process() = coroutineScope {

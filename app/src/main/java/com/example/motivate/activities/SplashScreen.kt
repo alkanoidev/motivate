@@ -1,33 +1,47 @@
 package com.example.motivate.activities
 
 import android.annotation.SuppressLint
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.example.motivate.R
+import com.google.android.material.transition.platform.MaterialSharedAxis
 
- class SplashScreen : AppCompatActivity() {
+
+class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val exit = MaterialSharedAxis(MaterialSharedAxis.X, true).apply { }
+        window.exitTransition = exit
+        window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
         context = applicationContext
         val networkState:Boolean = getState(context)
         if (networkState){
-            startActivity(Intent(this, MainActivity::class.java))
+            val bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
+            val i = Intent(this, MainActivity::class.java)
+            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            i.putExtra("flag", "modify")
+            startActivity(i,bundle)
             finish()
+
         }else{
-            startActivity(Intent(this, NoInternetConnection::class.java))
+            val bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
+            startActivity(Intent(this, NoInternetConnection::class.java),bundle)
             finish()
         }
 
     }
 
-    private fun getState(context:Context?) :Boolean{
+    private fun getState(context: Context?) :Boolean{
         if (context == null) return false
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -53,6 +67,7 @@ import com.example.motivate.R
         }
         return false
     }
+
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit  var context: Context
