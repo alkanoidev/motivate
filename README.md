@@ -10,6 +10,7 @@
 - Loading images from URL
 - Checking Internet Connection
 - Coroutines
+- Material Design motion
 ## Screenshots:
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2041.png)
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%204.png)
