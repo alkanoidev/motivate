@@ -28,15 +28,15 @@ class SplashScreen : AppCompatActivity() {
         if (networkState){
             val bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
             val i = Intent(this, MainActivity::class.java)
-            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            i.putExtra("flag", "modify")
+//            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+//            i.putExtra("flag", "modify")
             startActivity(i,bundle)
             finish()
 
         }else{
             val bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
             startActivity(Intent(this, NoInternetConnection::class.java),bundle)
-            finish()
+            //finish()
         }
 
     }

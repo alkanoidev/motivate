@@ -2,10 +2,12 @@ package com.example.motivate.activities
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.motivate.R
@@ -50,9 +52,9 @@ class MainActivity : AppCompatActivity() {
 
         GlobalScope.launch(Default) {
             process()
-            setImage()
+            //setImage()
+            showToast()
         }
-
     }
     private suspend fun process() = coroutineScope {
         quoteList = async { tools.getQuotes() }.await()
@@ -65,6 +67,13 @@ class MainActivity : AppCompatActivity() {
                                       "${instanceImages.id}/${tools.getScreenWidth()}/" +
                                       "${tools.getScreenHeight()}/?blur=5"
         Glide.with(context).load(instanceImages.download_url).into(imageView)
+    }
+
+    private suspend fun showToast() = withContext(Main){
+        delay(4000)
+        val toast = Toast.makeText(context,"Click on screen to change background!", Toast.LENGTH_SHORT)
+        toast.setGravity(Gravity.TOP, 0, 50)
+        toast.show()
     }
 
     fun update(view: View) {

@@ -25,7 +25,7 @@ class Utils {
         }.await()
 
         url.getString().apply {
-            quoteList = async(Dispatchers.Default) { parseJsonData(this@apply) }.await()
+            quoteList = withContext(Dispatchers.Default) { parseJsonData(this@apply) }
         }
         return@coroutineScope quoteList
 
@@ -37,7 +37,7 @@ class Utils {
         }.await()
 
         url.getString().apply {
-            imageList = async(Dispatchers.Default) { parseJsonImage(this@apply) }.await()
+            imageList = withContext(Dispatchers.Default) { parseJsonImage(this@apply) }
         }
         return@coroutineScope imageList
 
@@ -61,8 +61,8 @@ class Utils {
     private fun parseJsonData(data: String): MutableList<QuotesModel> {
         val list: MutableList<QuotesModel> = Gson().fromJson<MutableList<QuotesModel>>(data)
         list.forEach {
-            if (it.author == null) {
-                it.author = "Unknown"
+            when(it.author){
+                null -> it.author="Unknown"
             }
         }
         return list
