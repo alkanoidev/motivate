@@ -2,15 +2,15 @@
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/logo/logo.svg)
 ## Overview:
 <font size="3">Motivate is an example app for reading JSON files using GSON.  </font>
-- **The **idea** is to press on a button and randomly select one quote with the author from API to print on the screen.**
+- **The **idea** is to press on a button and randomly select one quote with the author from API to show.**
 - First kotlin android app!
 ## Features:
 - JSON parsing from URL
 - Splash Screen
 - Loading images from URL
 - Checking Internet Connection
-- Coroutines
-- Material Design motion
+- Coroutines for async
+- Material Design motion for animations
 ## Screenshots:
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%2041.png)
 ![failed to load](https://github.com/alkanoidev/motivate/blob/main/screenshots/Google%20Pixel%204.png)
