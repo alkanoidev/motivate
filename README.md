@@ -5,9 +5,9 @@
 - **The **idea** is to press on a button and randomly select one quote with the author from API to show.**
 - First kotlin android app!
 ## Features:
-- JSON parsing from URL
+- JSON parsing from an API
 - Splash Screen
-- Loading images from URL
+- Loading images from unsplash
 - Checking Internet Connection
 - Coroutines for async
 - Material Design motion for animations
