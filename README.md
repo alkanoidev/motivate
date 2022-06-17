@@ -21,9 +21,9 @@ Motivate is an example app for parsing JSON files using GSON.
 ## Screenshots:
 
 ![failed to load](https://raw.githubusercontent.com/alkanoidev/motivate/main/screenshots/GooglePixel41.png)
-![failed to load](https://raw.githubusercontent.com/alkanoidev/motivate/main/screenshots/GooglePixel204.png)
-![failed to load](https://raw.githubusercontent.com/alkanoidev/motivate/main/screenshots/GooglePixel2042.png)
-![failed to load](https://raw.githubusercontent.com/alkanoidev/motivate/main/screenshots/GooglePixel2043.png)
+![failed to load](https://raw.githubusercontent.com/alkanoidev/motivate/main/screenshots/GooglePixel4.png)
+![failed to load](https://raw.githubusercontent.com/alkanoidev/motivate/main/screenshots/GooglePixel42.png)
+![failed to load](https://raw.githubusercontent.com/alkanoidev/motivate/main/screenshots/GooglePixel43.png)
 
 ## Versions
 
