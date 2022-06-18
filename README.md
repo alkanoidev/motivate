@@ -40,6 +40,9 @@ Motivate is an example app for parsing JSON files using GSON.
 
 - [Free API - Inspirational quotes JSON](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 
-## Contact:
+### Author 👋
 
-- Email: alkanoidev@gmail.com
+ **Filip Ivanovic**
+
+* Website: [https://filipivanovic.netlify.app/](https://filipivanovic.netlify.app/)
+* Github: [@alkanoidev](https://github.com/alkanoidev)
